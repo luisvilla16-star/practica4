@@ -32,4 +32,13 @@ public class PeliculaTest {
         assertTrue(pelicula.toString().contains("Matrix"));
         assertTrue(pelicula.toString().contains("1999"));
     }
+    @Test
+    public void testGetInformacion() {
+        Pelicula pelicula = new Pelicula("Pulp Fiction", "Quentin Tarantino", 1994, "Crimen", 154);
+
+        String infoEsperada = "Título: Pulp Fiction, Director: Quentin Tarantino, Año: 1994, Género: Crimen, Duración: 154 min";
+        assertEquals(infoEsperada, pelicula.getInformacion());
+    }
+
+
 }

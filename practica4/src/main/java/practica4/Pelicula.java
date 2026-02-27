@@ -109,12 +109,12 @@ public class Pelicula {
     /**
      * devuelve la infromacion del la pelicula
      */
-    public void getInformacion() {
-        System.out.println("titulo:" + this.titulo);
-        System.out.println("director:" + this.director);
-        System.out.println("Año Estreno:" + this.añoEstreno);
-        System.out.println("Genero:" + this.genero);
-        System.out.println("Duracion:" + this.duracion);
+    public String getInformacion() {
+        return "Título: " + titulo +
+                ", Director: " + director +
+                ", Año: " + añoEstreno +
+                ", Género: " + genero +
+                ", Duración: " + duracion + " min";
     }
 
     /**

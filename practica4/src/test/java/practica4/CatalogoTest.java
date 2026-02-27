@@ -40,12 +40,33 @@ class CatalogoTest {
     }
 
     @Test
-    void buscarPeliculaPorTituloExistente() {
+    public void testBuscarPeliculaPorTituloExistente() {
         catalogo.agregarPelicula(pelicula1);
         catalogo.agregarPelicula(pelicula2);
 
         String resultado = catalogo.buscarPeliculaPorTitulo("Forrest Gump");
+        assertTrue(resultado.contains("Forrest Gump"));
+        assertTrue(resultado.contains("1994"));
+    }
 
-        assertEquals("Forrest Gump", resultado);
+    @Test
+    public void testBuscarPeliculaPorTituloNoExistente() {
+        catalogo.agregarPelicula(pelicula1);
+
+        String resultado = catalogo.buscarPeliculaPorTitulo("Titanic");
+        assertEquals("No se encontró la película con título: Titanic", resultado);
+    }
+
+    @Test
+    public void testBuscarPeliculaPorTituloCaseInsensitive() {
+        catalogo.agregarPelicula(pelicula1);
+
+        String resultado = catalogo.buscarPeliculaPorTitulo("el señor de los anillos");
+        assertTrue(resultado.contains("El Señor de los Anillos"));
+    }
+    @Test
+    public void testCatalogoVacio() {
+        String resultado = catalogo.getPeliculas();
+        assertEquals("El catálogo está vacío", resultado);
     }
 }

@@ -47,15 +47,11 @@ public class Catalogo {
 
     public String buscarPeliculaPorTitulo(String titulo) {
         for (Pelicula p : peliculas) {
-            if (p.getTitulo().equals(titulo)) {
-                System.out.println("Titulo:" + p.getTitulo());
-                System.out.println("Director:" + p.getDirector());
-                System.out.println("Año Estreno:" + p.getAñoEstreno());
-                System.out.println("Genero:" + p.getGenero());
-                System.out.println("Duracion:" + p.getDuracion());
+            if (p.getTitulo().equalsIgnoreCase(titulo)) {
+                return p.toString();
             }
         }
-        return titulo;
+        return "No se encontró la película con título: " + titulo;
     }
 
     /**
