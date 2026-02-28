@@ -1,35 +1,41 @@
 package practica4;
+
 import java.util.ArrayList;
 
 /**
- * Clase que representa el catalogo de peliculas en el streaming
+ * Clase que representa el catálogo de películas en el streaming
  */
 public class Catalogo {
-    ArrayList<Pelicula> peliculas;
+
+    private ArrayList<Pelicula> peliculas;
 
     /**
-     * Constructor que incializa la lista de pelicula como vacia
+     * Constructor que inicializa la lista de películas como vacía
      */
     public Catalogo() {
-        peliculas = new ArrayList<Pelicula>();
+        peliculas = new ArrayList<>();
     }
 
     /**
-     * Agregar pelicula
-     * @param p objeto Pelicula para agrgar
+     * Agregar película
+     * @param p objeto Pelicula para agregar
      */
     public void agregarPelicula(Pelicula p) {
         peliculas.add(p);
     }
 
     /**
-     * devierve la informacion de todas las peliculas
+     * Devuelve la información de todas las películas
      * @return resultado
      */
     public String getPeliculas() {
+        if (peliculas.isEmpty()) {
+            return "El catálogo está vacío";
+        }
+
         String resultado = "";
 
-        for(Pelicula p : peliculas) {
+        for (Pelicula p : peliculas) {
             resultado += "Titulo: " + p.getTitulo() + "\n";
             resultado += "Director: " + p.getDirector() + "\n";
             resultado += "Año Estreno: " + p.getAñoEstreno() + "\n";
@@ -37,48 +43,21 @@ public class Catalogo {
             resultado += "Duracion: " + p.getDuracion() + "\n";
             resultado += "----------------------\n";
         }
-        if (resultado.equals("")) {
-            return "El catálogo está vacío";
-        }
-        return  resultado;
+
+        return resultado;
     }
 
     /**
-     * bausca la pelicual por le titulo
+     * Busca la película por el título
      * @param titulo
-     * @return titulo
+     * @return información o mensaje de no encontrado
      */
-
     public String buscarPeliculaPorTitulo(String titulo) {
         for (Pelicula p : peliculas) {
             if (p.getTitulo().equalsIgnoreCase(titulo)) {
-                return p.toString();
+                return p.getInformacion();
             }
         }
         return "No se encontró la película con título: " + titulo;
     }
-
-    /**
-     * regrea un cadena ordenada de informacion
-     * @return reultado
-     */
-    public String toString(){
-        String resultado = "";
-        for(Pelicula p : peliculas) {
-            resultado += "Titulo: " + p.getTitulo() + "\n";
-            resultado += "Director: " + p.getDirector() + "\n";
-            resultado += "Año Estreno: " + p.getAñoEstreno() + "\n";
-            resultado += "Genero: " + p.getGenero() + "\n";
-            resultado += "Duracion: " + p.getDuracion() + "\n";
-            resultado += "----------------------\n";
-
-        }
-        if (resultado.equals("")) {
-            return "El catálogo está vacío";
-        }
-        return resultado;
-    }
-
 }
-
-
