@@ -28,6 +28,7 @@ public class Catalogo {
      */
     public String getPeliculas() {
         String resultado = "";
+
         for(Pelicula p : peliculas) {
             resultado += "Titulo: " + p.getTitulo() + "\n";
             resultado += "Director: " + p.getDirector() + "\n";
@@ -35,6 +36,9 @@ public class Catalogo {
             resultado += "Genero: " + p.getGenero() + "\n";
             resultado += "Duracion: " + p.getDuracion() + "\n";
             resultado += "----------------------\n";
+        }
+        if (resultado.equals("")) {
+            return "El catálogo está vacío";
         }
         return  resultado;
     }
@@ -68,6 +72,9 @@ public class Catalogo {
             resultado += "Duracion: " + p.getDuracion() + "\n";
             resultado += "----------------------\n";
 
+        }
+        if (resultado.equals("")) {
+            return "El catálogo está vacío";
         }
         return resultado;
     }

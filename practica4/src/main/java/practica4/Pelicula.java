@@ -5,7 +5,7 @@ public class Pelicula {
     private String director;
     private int añoEstreno;
     private String genero;
-    public int duracion;
+    private int duracion;
 
     public Pelicula() {
     }
@@ -13,14 +13,14 @@ public class Pelicula {
     /**
      * constructor que incilaiza con parametro la pelicula
      * @param titulo de la pelicula
-     * @param directorio de la pelicula
+     * @param director de la pelicula
      * @param añoEstreno de la pelicula
      * @param genero de la pelicula
      * @param duracion de la pelicula
      */
-    public Pelicula(String titulo, String directorio, int añoEstreno, String genero, int duracion) {
+    public Pelicula(String titulo, String director, int añoEstreno, String genero, int duracion) {
         this.titulo = titulo;
-        this.director = directorio;
+        this.director = director;
         this.añoEstreno = añoEstreno;
         this.genero = genero;
         this.duracion = duracion;
@@ -31,6 +31,7 @@ public class Pelicula {
      * @return titulo de la pelicula
      */
     public String getTitulo() {
+
         return titulo;
     }
 
@@ -39,6 +40,7 @@ public class Pelicula {
      * @param titulo de la pelicula
      */
     public void setTitulo(String titulo) {
+
         this.titulo = titulo;
     }
 
@@ -47,6 +49,7 @@ public class Pelicula {
      * @return director de la pelicula
      */
     public String getDirector() {
+
         return director;
     }
 
@@ -55,6 +58,7 @@ public class Pelicula {
      * @param director de la pelicual
      */
     public void setDirector(String director) {
+
         this.director = director;
     }
 
@@ -63,6 +67,7 @@ public class Pelicula {
      * @return añoEstreno de la pelicula
      */
     public int getAñoEstreno() {
+
         return añoEstreno;
     }
 
@@ -71,6 +76,7 @@ public class Pelicula {
      * @param añoEstreno de la pelicula
      */
     public void setAñoEstreno(int añoEstreno) {
+
         this.añoEstreno = añoEstreno;
     }
 
@@ -79,6 +85,7 @@ public class Pelicula {
      * @return genero de la pelicual
      */
     public String getGenero() {
+
         return genero;
     }
 
@@ -87,6 +94,7 @@ public class Pelicula {
      * @param genero de la pelicual
      */
     public void setGenero(String genero) {
+
         this.genero = genero;
     }
 
@@ -95,6 +103,7 @@ public class Pelicula {
      * @return duracion de la pelicula
      */
     public int getDuracion() {
+
         return duracion;
     }
 
@@ -103,6 +112,7 @@ public class Pelicula {
      * @param duracion  de la pelicual
      */
     public void setDuracion(int duracion) {
+
         this.duracion = duracion;
     }
 
@@ -133,6 +143,8 @@ public class Pelicula {
      * regresa la cadena de la con la infromacion
      * @return string
      */
+
+    @Override
     public String toString(){
         return "Título: " + this.titulo + "\n" +
                 "Director: " + this.director + "\n" +
